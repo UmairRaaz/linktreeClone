@@ -2,26 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+body{
+    @apply bg-gray-100;
+}
+label.input-label{
+    @apply uppercase text-gray-400 font-semibold  text-xs mb-2;
+}
+input[type='text'], textarea{
+    @apply bg-gray-100 border w-full block p-2 mb-2;
+}
+.radio-togglers{
+    @apply p-1 bg-gray-200 inline-flex
+}
+.radio-togglers div{
+    @apply p-2 px-4 text-gray-500 flex items-center gap-2 ;
+}
+.radio-togglers input[type="radio"]{
+    @apply hidden;
+}
+.radio-togglers input[type="radio"]:checked + div{
+    @apply bg-white text-blue-600;
+}
+.sortable-ghost{
+    opacity: .3;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+input#navCb:checked ~ aside {
+    left: 0;
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+input#navCb:checked ~ .backdrop {
+    display:  block;
 }
