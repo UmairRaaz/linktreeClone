@@ -84,7 +84,7 @@ const UserPage = async ({ params }) => {
       <div className="max-w-2xl grid md:grid-cols-2 gap-6 p-4 px-8 mx-auto ">
         {page.links.map((link, index) => (
           <Link
-          ping={`${process.env.URL}api/click?url=${btoa(link.url)}+&page=${page.uri}`}
+          ping={`${process.env.LOCALURL}api/click?url=${btoa(link.url)}+&page=${page.uri}`}
             key={index}
             href={link.url}
             target="_blank"
